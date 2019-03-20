@@ -1,0 +1,5 @@
+c:\users\os\documents\visual studio 2010\Projects\QLKSAN\QLKSAN\bin\QLKSAN.dll
+c:\users\os\documents\visual studio 2010\Projects\QLKSAN\QLKSAN\bin\QLKSAN.pdb
+c:\users\os\documents\visual studio 2010\Projects\QLKSAN\QLKSAN\obj\Debug\QLKSAN.dll
+c:\users\os\documents\visual studio 2010\Projects\QLKSAN\QLKSAN\obj\Debug\QLKSAN.pdb
+C:\Users\OS\documents\visual studio 2010\Projects\QLKSAN\QLKSAN\obj\Debug\QLKSAN.csprojResolveAssemblyReference.cache
