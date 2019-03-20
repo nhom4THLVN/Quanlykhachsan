@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="QLKS.Master.cs" Inherits="QLKSAN.QLNV" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>QUẢN LÝ KHÁCH SẠN</title>
+    <link href="Themes/styles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="QLKS" runat="server">
+    <div id = "menutop">
+        <div id="menu">
+            <ul>
+                <li><a href = "#">Trang chủ</a></li>
+                <li><a href ="QLKH.aspx">Quản lý khách hàng</a></li>
+                <li><a href = "Thuephong.aspx">Thuê phòng</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="menucontent">
+        <div id="content">
+            
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="footer">
+        <div id="ndfooter">
+            CopyRingt: Thành viên nhóm 4 môn Thực hành làm việc nhóm.
+        </div>
+    </div>
+    </form>
+</body>
+</html>
