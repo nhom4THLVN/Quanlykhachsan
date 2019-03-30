@@ -17,6 +17,7 @@ namespace QLKSAN
         protected void Page_Load(object sender, EventArgs e)
         {
             load_data();
+            // Load mã phòng tình trạng trống lên Dropdownlist 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString()))
             {
                 con.Open();
@@ -31,6 +32,7 @@ namespace QLKSAN
         }
          public void load_data()
              {
+                // Load dữ liệu lên gridview
                  using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString()))
                  {
                      con.Open();
@@ -45,7 +47,7 @@ namespace QLKSAN
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string maPhong = ddlMaphong.DataValueField;
+            string maPhong = ddlMaphong.SelectedValue;
             string maNV = txtmanhanvien.Text;
             string cmnd = txtCMND.Text;
             string ngaythue = txtNgaythue.Text;
@@ -61,7 +63,7 @@ namespace QLKSAN
                 string sql = "INSERT INTO THUEPHONG values (@maphong, @manv, @cmnd, @ngaythue)";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@maphong", ddlMaphong.DataValueField);
+                cmd.Parameters.AddWithValue("@maphong", ddlMaphong.SelectedValue);
                 cmd.Parameters.AddWithValue("@manv", txtmanhanvien.Text);
                 cmd.Parameters.AddWithValue("@cmnd", txtCMND.Text);
                 cmd.Parameters.AddWithValue("@ngaythue", txtNgaythue.Text);
@@ -69,9 +71,12 @@ namespace QLKSAN
                 if (sl > 0)
                 {
                     lblThongbao.Text = "Thêm thành công";
-                    string sql1 = "UPDATE PHONG SET Tinhtrang = 'True' where Maphong ='" + ddlMaphong.DataValueField + "' ";
+                    //Chuyển tình trạng phòng sang True(Đã thuê)
+                    string sql1 = "UPDATE PHONG SET Tinhtrang = 'True' where Maphong =@maphong";
                     SqlCommand cmd1 = new SqlCommand(sql1, conn);
+                    cmd1.Parameters.AddWithValue("@maphong",ddlMaphong.SelectedValue);
                     cmd1.ExecuteNonQuery();
+
                 }
                 else
                     lblThongbao.Text = "Không thành công vui lòng nhập lại";
@@ -92,7 +97,7 @@ namespace QLKSAN
 
         protected void bntTimkiem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTimkiem.Text))
+            if (string.IsNullOrEmpty(txtTimkiem.Text.Trim()))
             {
                 lblThongbao.Text = "Mời bạn nhập thông tin tìm kiếm";
             }
