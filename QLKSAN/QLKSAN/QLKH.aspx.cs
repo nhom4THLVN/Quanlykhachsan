@@ -57,6 +57,7 @@ namespace QLKSAN
             if (ctrl is TextBox)
             {
                 (ctrl as TextBox).Text = string.Empty;
+                txtCMND.Enabled = true;
             }
             else
             {
@@ -92,12 +93,15 @@ namespace QLKSAN
 
         protected void bntXoatrong_Click(object sender, EventArgs e)
         {
+            txtCMND.Enabled = true;
             XoaNoiDungForm(this);
             lblThongbao.Text = "";
+
         }
 
         protected void gvKH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtCMND.Enabled = false;
             int dong = gvKH.SelectedIndex;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
             con.Open();
@@ -168,7 +172,7 @@ namespace QLKSAN
 
         protected void bntTimkiem_Click(object sender, EventArgs e)
         {
-            string key = txtTimkiem.Text;
+            string key = txtTimkiem.Text.Trim();
             if (string.IsNullOrEmpty(key))
             {
                 lblThongbao.Text = "Mời bạn nhập thông tin tìm kiếm";
