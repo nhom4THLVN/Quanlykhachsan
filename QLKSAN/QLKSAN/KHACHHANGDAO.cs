@@ -115,6 +115,7 @@ namespace QLKSAN
             }
             return false;
         }
+
         public DataTable Tim(string key)
         {
             DataTable table = new DataTable();
