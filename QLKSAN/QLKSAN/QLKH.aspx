@@ -53,7 +53,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Số CMND</td>
                 <td class="style2">
-                    <asp:TextBox ID="txtCMND" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtCMND" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
